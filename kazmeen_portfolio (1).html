@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kazmeen Chaudhary — Data Scientist & Analytics Expert</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0e17;
+  --bg2:#0f1520;
+  --bg3:#141c2e;
+  --card:#131a28;
+  --border:rgba(99,140,210,0.15);
+  --border2:rgba(99,140,210,0.25);
+  --gold:#c9a84c;
+  --gold2:#f0d080;
+  --gold-bg:rgba(201,168,76,0.08);
+  --teal:#2dd4c0;
+  --teal2:#1aab99;
+  --blue:#638cd2;
+  --blue2:#4a7bc4;
+  --text:#e8edf5;
+  --text2:#9aaabf;
+  --text3:#6a7a90;
+  --accent:#c9a84c;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.7;overflow-x:hidden;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,14,23,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 5%;}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px;}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:var(--gold);letter-spacing:.5px;}
+.nav-logo span{color:var(--text2);font-weight:400;}
+.nav-links{display:flex;gap:28px;}
+.nav-links a{font-size:13px;font-weight:500;color:var(--text2);text-decoration:none;letter-spacing:.04em;transition:color .2s;}
+.nav-links a:hover{color:var(--gold);}
+.nav-cta{background:var(--gold);color:#0a0e17;font-size:12px;font-weight:600;padding:7px 18px;border-radius:4px;text-decoration:none;letter-spacing:.05em;transition:background .2s;}
+.nav-cta:hover{background:var(--gold2);}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;padding:100px 5% 60px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:-200px;right:-100px;width:700px;height:700px;background:radial-gradient(ellipse,rgba(99,140,210,0.06) 0%,transparent 70%);pointer-events:none;}
+.hero::after{content:'';position:absolute;bottom:-100px;left:-100px;width:500px;height:500px;background:radial-gradient(ellipse,rgba(201,168,76,0.05) 0%,transparent 70%);pointer-events:none;}
+.hero-inner{max-width:1100px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 340px;gap:60px;align-items:center;}
+.hero-eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:24px;}
+.eyebrow-dot{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 12px var(--teal);}
+.eyebrow-text{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);}
+h1{font-family:'Cormorant Garamond',serif;font-size:58px;font-weight:700;line-height:1.05;margin-bottom:16px;color:var(--text);}
+h1 em{color:var(--gold);font-style:italic;}
+.hero-title2{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--text2);margin-bottom:24px;font-style:italic;}
+.hero-desc{font-size:15px;color:var(--text2);line-height:1.8;max-width:540px;margin-bottom:36px;}
+.hero-badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px;}
+.hb{font-size:11px;font-weight:600;letter-spacing:.06em;padding:5px 14px;border-radius:20px;border:1px solid;}
+.hb-gold{background:var(--gold-bg);color:var(--gold);border-color:rgba(201,168,76,0.3);}
+.hb-teal{background:rgba(45,212,192,0.06);color:var(--teal);border-color:rgba(45,212,192,0.2);}
+.hb-blue{background:rgba(99,140,210,0.08);color:var(--blue);border-color:rgba(99,140,210,0.25);}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-primary{background:var(--gold);color:#0a0e17;font-weight:600;font-size:13px;padding:11px 28px;border-radius:4px;text-decoration:none;transition:all .2s;letter-spacing:.04em;}
+.btn-primary:hover{background:var(--gold2);transform:translateY(-1px);}
+.btn-outline{background:transparent;color:var(--text);font-weight:500;font-size:13px;padding:11px 28px;border-radius:4px;text-decoration:none;border:1px solid var(--border2);transition:all .2s;}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);}
+
+/* HERO CARD */
+.hero-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;position:relative;overflow:hidden;}
+.hero-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--teal));}
+.hc-avatar{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--teal2));display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:#0a0e17;margin-bottom:16px;}
+.hc-name{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--text);margin-bottom:4px;}
+.hc-role{font-size:12px;color:var(--text2);margin-bottom:20px;}
+.hc-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px;}
+.hcs{background:var(--bg3);border-radius:8px;padding:12px;}
+.hcs-n{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:var(--gold);}
+.hcs-l{font-size:11px;color:var(--text3);margin-top:2px;}
+.hc-avail{display:flex;align-items:center;gap:8px;background:rgba(45,212,192,0.06);border:1px solid rgba(45,212,192,0.15);border-radius:8px;padding:10px 14px;}
+.avail-dot{width:7px;height:7px;border-radius:50%;background:var(--teal);flex-shrink:0;box-shadow:0 0 8px var(--teal);}
+.avail-text{font-size:12px;font-weight:600;color:var(--teal);}
+.hc-contact{margin-top:16px;font-size:12px;color:var(--text3);}
+.hc-contact a{color:var(--blue);text-decoration:none;}
+
+/* SECTIONS */
+section{padding:80px 5%;}
+.section-inner{max-width:1100px;margin:0 auto;}
+.section-label{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:12px;}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:700;color:var(--text);margin-bottom:12px;line-height:1.15;}
+.section-sub{font-size:15px;color:var(--text2);max-width:600px;line-height:1.75;margin-bottom:48px;}
+.divider-line{width:48px;height:2px;background:linear-gradient(90deg,var(--gold),transparent);margin-bottom:48px;}
+
+/* METRICS */
+.metrics-bar{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:32px 40px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-bottom:60px;}
+.metric{text-align:center;}
+.metric-n{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:700;color:var(--gold);line-height:1;}
+.metric-l{font-size:12px;color:var(--text2);margin-top:6px;}
+.metric-sep{width:1px;background:var(--border);align-self:stretch;}
+
+/* SERVICES */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.srv{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;transition:all .25s;cursor:default;position:relative;overflow:hidden;}
+.srv::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--srv-color,var(--gold));transform:scaleX(0);transform-origin:left;transition:transform .3s;}
+.srv:hover{border-color:var(--border2);transform:translateY(-3px);}
+.srv:hover::after{transform:scaleX(1);}
+.srv-icon{font-size:26px;margin-bottom:14px;}
+.srv-title{font-size:15px;font-weight:600;color:var(--text);margin-bottom:8px;}
+.srv-desc{font-size:13px;color:var(--text2);line-height:1.7;}
+.srv-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:12px;}
+.srv-tag{font-size:10px;font-weight:600;padding:3px 8px;border-radius:10px;background:rgba(99,140,210,0.1);color:var(--blue);border:1px solid rgba(99,140,210,0.15);}
+
+/* EXPERIENCE */
+.exp-timeline{position:relative;padding-left:24px;}
+.exp-timeline::before{content:'';position:absolute;left:0;top:8px;bottom:8px;width:1px;background:linear-gradient(180deg,var(--gold),var(--teal),transparent);}
+.exp-item{position:relative;margin-bottom:40px;padding-bottom:40px;border-bottom:1px solid var(--border);}
+.exp-item:last-child{border-bottom:none;}
+.exp-dot{position:absolute;left:-28px;top:8px;width:10px;height:10px;border-radius:50%;background:var(--gold);border:2px solid var(--bg);box-shadow:0 0 10px rgba(201,168,76,0.4);}
+.exp-header{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;margin-bottom:6px;flex-wrap:wrap;}
+.exp-role{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:var(--text);}
+.exp-period{font-size:12px;color:var(--text3);background:var(--bg3);padding:4px 12px;border-radius:20px;white-space:nowrap;border:1px solid var(--border);}
+.exp-company{font-size:13px;font-weight:600;color:var(--gold);margin-bottom:16px;}
+.exp-points{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.exp-points li{font-size:13.5px;color:var(--text2);line-height:1.7;padding-left:16px;position:relative;}
+.exp-points li::before{content:'→';position:absolute;left:0;color:var(--teal);font-size:12px;}
+.exp-kpis{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
+.kpi{font-size:12px;font-weight:600;background:rgba(45,212,192,0.06);color:var(--teal);border:1px solid rgba(45,212,192,0.15);padding:4px 12px;border-radius:20px;}
+
+/* SKILLS */
+.skills-layout{display:grid;grid-template-columns:1fr 1fr;gap:32px;}
+.skill-block{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;}
+.skill-block-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:16px;display:flex;align-items:center;gap:8px;}
+.skill-block-title::before{content:'';width:4px;height:16px;background:var(--gold);border-radius:2px;flex-shrink:0;}
+.skill-pills{display:flex;flex-wrap:wrap;gap:7px;}
+.sp{font-size:12px;padding:5px 12px;border-radius:20px;background:var(--bg3);color:var(--text2);border:1px solid var(--border);}
+.sp.highlight{background:rgba(201,168,76,0.08);color:var(--gold);border-color:rgba(201,168,76,0.2);}
+
+/* AWARDS */
+.awards-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+.award{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;position:relative;overflow:hidden;}
+.award.featured{border-color:rgba(201,168,76,0.3);background:var(--gold-bg);}
+.award.featured::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold2));}
+.award-icon{font-size:28px;margin-bottom:12px;}
+.award-title{font-size:15px;font-weight:600;color:var(--text);margin-bottom:6px;}
+.award-sub{font-size:12px;font-weight:600;color:var(--gold);margin-bottom:8px;}
+.award-desc{font-size:13px;color:var(--text2);line-height:1.65;}
+
+/* INDUSTRIES */
+.ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+.ind{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:18px;text-align:center;transition:border-color .2s;}
+.ind:hover{border-color:var(--border2);}
+.ind-icon{font-size:24px;margin-bottom:8px;}
+.ind-name{font-size:13px;font-weight:600;color:var(--text);}
+.ind-detail{font-size:11px;color:var(--text3);margin-top:4px;}
+
+/* EDUCATION */
+.edu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.edu{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:22px;}
+.edu-icon{font-size:22px;margin-bottom:10px;}
+.edu-deg{font-size:14px;font-weight:600;color:var(--text);margin-bottom:4px;line-height:1.4;}
+.edu-school{font-size:12px;color:var(--blue);margin-bottom:4px;}
+.edu-year{font-size:11px;color:var(--text3);}
+.edu-badge{display:inline-block;font-size:10px;font-weight:600;background:rgba(45,212,192,0.08);color:var(--teal);border:1px solid rgba(45,212,192,0.15);padding:3px 10px;border-radius:10px;margin-top:8px;}
+
+/* CTA FOOTER */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:80px 5%;}
+.footer-inner{max-width:1100px;margin:0 auto;text-align:center;}
+.footer-title{font-family:'Cormorant Garamond',serif;font-size:46px;font-weight:700;color:var(--text);margin-bottom:16px;line-height:1.1;}
+.footer-title em{color:var(--gold);font-style:italic;}
+.footer-sub{font-size:15px;color:var(--text2);max-width:560px;margin:0 auto 36px;line-height:1.75;}
+.footer-contact{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:40px;}
+.fc{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text2);}
+.fc-icon{font-size:16px;}
+.footer-bottom{font-size:12px;color:var(--text3);border-top:1px solid var(--border);padding-top:24px;margin-top:24px;}
+
+/* FADE IN ANIMATION */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.fade-up{animation:fadeUp .6s ease forwards;}
+.delay-1{animation-delay:.1s;}
+.delay-2{animation-delay:.2s;}
+.delay-3{animation-delay:.3s;}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{width:6px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">Kazmeen <span>Chaudhary</span></div>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#awards">Awards</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="nav-cta">Hire Me</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow fade-up">
+        <div class="eyebrow-dot"></div>
+        <div class="eyebrow-text">Available for Freelance Projects · Worldwide</div>
+      </div>
+      <h1 class="fade-up delay-1">Senior Data Scientist<br>& <em>Analytics Expert</em></h1>
+      <div class="hero-title2 fade-up delay-1">Assistant Manager · Ph.D. Candidate (AI/ML) · 10+ Years · Dubai, UAE</div>
+      <p class="hero-desc fade-up delay-2">I transform raw, complex data into predictive systems, actionable intelligence, and business outcomes — across ML, BI, data engineering, forecasting, and AI. Whatever your data challenge, I solve it end-to-end.</p>
+      <div class="hero-badges fade-up delay-2">
+        <span class="hb hb-gold">⭐ Top 1% Data Expert</span>
+        <span class="hb hb-gold">🏆 NAJM Award Winner</span>
+        <span class="hb hb-gold">🏆 INSPIRE Award — Nakheel</span>
+        <span class="hb hb-teal">🎤 Best Speaker 2022 — Dubai</span>
+        <span class="hb hb-blue">🥈 Analytics Vidhya Hackathon</span>
+        <span class="hb hb-blue">Ph.D. AI/ML — BITS Pilani</span>
+      </div>
+      <div class="hero-ctas fade-up delay-3">
+        <a href="#contact" class="btn-primary">Let's Work Together →</a>
+        <a href="#experience" class="btn-outline">View Experience</a>
+      </div>
+    </div>
+    <div class="hero-card fade-up delay-2">
+      <div class="hc-avatar">KC</div>
+      <div class="hc-name">Kazmeen Chaudhary</div>
+      <div class="hc-role">Assistant Manager · Data Scientist · Analytics Lead</div>
+      <div class="hc-stats">
+        <div class="hcs"><div class="hcs-n">10+</div><div class="hcs-l">Years of experience</div></div>
+        <div class="hcs"><div class="hcs-n">4</div><div class="hcs-l">Enterprise orgs</div></div>
+        <div class="hcs"><div class="hcs-n">50+</div><div class="hcs-l">Dashboards built</div></div>
+        <div class="hcs"><div class="hcs-n">4</div><div class="hcs-l">Awards earned</div></div>
+      </div>
+      <div class="hc-avail">
+        <div class="avail-dot"></div>
+        <div class="avail-text">Open to freelance projects now</div>
+      </div>
+      <div class="hc-contact" style="margin-top:14px;font-size:12px;color:var(--text3);">
+        📧 <a href="mailto:kazmeen.chaudhary@gmail.com">kazmeen.chaudhary@gmail.com</a><br>
+        📍 UAE Resident
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METRICS -->
+<section style="padding:0 5% 80px;">
+  <div class="section-inner">
+    <div class="metrics-bar">
+      <div class="metric"><div class="metric-n">AED 550K</div><div class="metric-l">Incremental lease revenue generated (Nakheel)</div></div>
+      <div class="metric"><div class="metric-n">95%</div><div class="metric-l">Prediction accuracy — footfall & demand forecasting</div></div>
+      <div class="metric"><div class="metric-n">80%</div><div class="metric-l">Turnaround time reduction via ML automation</div></div>
+      <div class="metric"><div class="metric-n">300+</div><div class="metric-l">Business users enabled on self-service analytics</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner">
+    <div class="section-label">What I Do</div>
+    <div class="section-title">Every Data Service<br>You Could Need</div>
+    <div class="section-sub">From a quick analysis to a full AI transformation — if it involves data, I can deliver it. No need to hire multiple specialists.</div>
+    <div class="services-grid">
+      <div class="srv" style="--srv-color:#c9a84c;">
+        <div class="srv-icon">🤖</div>
+        <div class="srv-title">Machine Learning & AI</div>
+        <div class="srv-desc">Predictive models, classification, churn prediction, CLV modeling, NLP, deep learning, reinforcement learning, generative AI integration, and full MLOps deployment.</div>
+        <div class="srv-tags"><span class="srv-tag">Scikit-learn</span><span class="srv-tag">TensorFlow</span><span class="srv-tag">PyTorch</span><span class="srv-tag">Azure ML</span></div>
+      </div>
+      <div class="srv" style="--srv-color:#2dd4c0;">
+        <div class="srv-icon">⚙️</div>
+        <div class="srv-title">Data Engineering & Pipelines</div>
+        <div class="srv-desc">ETL/ELT pipelines, data lake architecture, warehouse design, API integrations, Airflow orchestration, Databricks workflows, real-time data flows.</div>
+        <div class="srv-tags"><span class="srv-tag">Databricks</span><span class="srv-tag">Airflow</span><span class="srv-tag">Azure Data Factory</span><span class="srv-tag">dbt</span></div>
+      </div>
+      <div class="srv" style="--srv-color:#638cd2;">
+        <div class="srv-icon">📊</div>
+        <div class="srv-title">BI Dashboards & Reporting</div>
+        <div class="srv-desc">Executive dashboards, KPI frameworks, self-service analytics, interactive reports with row-level security, automated refresh workflows, C-suite presentations.</div>
+        <div class="srv-tags"><span class="srv-tag">Power BI</span><span class="srv-tag">Tableau</span><span class="srv-tag">Looker</span><span class="srv-tag">DAX</span></div>
+      </div>
+      <div class="srv" style="--srv-color:#c9a84c;">
+        <div class="srv-icon">📈</div>
+        <div class="srv-title">Forecasting & Optimization</div>
+        <div class="srv-desc">Time-series forecasting, demand planning, revenue & pricing optimization models, scenario planning, inventory optimization, financial modeling.</div>
+        <div class="srv-tags"><span class="srv-tag">Prophet</span><span class="srv-tag">ARIMA</span><span class="srv-tag">Python</span><span class="srv-tag">R</span></div>
+      </div>
+      <div class="srv" style="--srv-color:#2dd4c0;">
+        <div class="srv-icon">👥</div>
+        <div class="srv-title">Customer & Marketing Analytics</div>
+        <div class="srv-desc">Segmentation, churn prediction, RFM modeling, cohort analysis, A/B testing, attribution modeling, campaign ROI, funnel analysis, LTV optimization.</div>
+        <div class="srv-tags"><span class="srv-tag">CLV</span><span class="srv-tag">RFM</span><span class="srv-tag">A/B Testing</span><span class="srv-tag">Markov</span></div>
+      </div>
+      <div class="srv" style="--srv-color:#638cd2;">
+        <div class="srv-icon">🎯</div>
+        <div class="srv-title">Data Strategy & Consulting</div>
+        <div class="srv-desc">Data maturity assessments, analytics roadmaps, governance frameworks, KPI definition, data quality frameworks, team upskilling, vendor RFP management.</div>
+        <div class="srv-tags"><span class="srv-tag">Governance</span><span class="srv-tag">Strategy</span><span class="srv-tag">KPI Design</span><span class="srv-tag">Advisory</span></div>
+      </div>
+      <div class="srv" style="--srv-color:#c9a84c;">
+        <div class="srv-icon">🔬</div>
+        <div class="srv-title">Statistical Analysis & EDA</div>
+        <div class="srv-desc">Exploratory data analysis, hypothesis testing, multivariate experiments, root cause analysis, variance analysis, SPC-based quality control, anomaly detection.</div>
+        <div class="srv-tags"><span class="srv-tag">Python</span><span class="srv-tag">R</span><span class="srv-tag">SPSS</span><span class="srv-tag">Alteryx</span></div>
+      </div>
+      <div class="srv" style="--srv-color:#2dd4c0;">
+        <div class="srv-icon">☁️</div>
+        <div class="srv-title">Cloud Data Platforms</div>
+        <div class="srv-desc">BigQuery, Azure ML, Microsoft Fabric Lakehouse, GCP data pipelines, Snowflake warehousing, cloud-native analytics architecture and deployment.</div>
+        <div class="srv-tags"><span class="srv-tag">BigQuery</span><span class="srv-tag">Azure</span><span class="srv-tag">GCP</span><span class="srv-tag">Snowflake</span></div>
+      </div>
+      <div class="srv" style="--srv-color:#638cd2;">
+        <div class="srv-icon">🔗</div>
+        <div class="srv-title">Real Estate & Property Analytics</div>
+        <div class="srv-desc">Portfolio performance analytics, occupancy & rent roll analysis, RERA index modeling, leasing optimization, tenant mix analytics, asset forecasting — Yardi-integrated.</div>
+        <div class="srv-tags"><span class="srv-tag">Yardi</span><span class="srv-tag">RERA</span><span class="srv-tag">Leasing</span><span class="srv-tag">Portfolio BI</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" style="background:var(--bg2);">
+  <div class="section-inner">
+    <div class="section-label">Career History</div>
+    <div class="section-title">10+ Years of Enterprise<br>Data Leadership</div>
+    <div class="divider-line"></div>
+    <div class="exp-timeline">
+
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <div class="exp-header">
+          <div class="exp-role">Senior Data Scientist / Assistant Manager — Data Analytics</div>
+          <div class="exp-period">Jun 2024 – Present</div>
+        </div>
+        <div class="exp-company">🏢 Dubai Holding Asset Management — Dubai, UAE</div>
+        <ul class="exp-points">
+          <li>Deployed ML models for pricing optimization, churn prediction, renewals automation, and asset performance forecasting across residential and retail portfolios.</li>
+          <li>Built end-to-end Databricks & Microsoft Fabric Lakehouse pipelines, enabling self-service analytics and real-time KPI monitoring.</li>
+          <li>Designed 50+ interactive Power BI dashboards with advanced DAX, row-level security and automated refresh — improving dashboard performance by 65%.</li>
+          <li>Automated contract renewal analytics by integrating RERA index logic with Yardi ERP, reducing turnaround time by 80%.</li>
+          <li>Built an AI-powered market intelligence platform integrating real-time property and macroeconomic data for portfolio forecasting.</li>
+          <li>Led enterprise vendor RFP assessments, guiding Dubai Holding's AI transformation platform investment decisions.</li>
+        </ul>
+        <div class="exp-kpis">
+          <span class="kpi">65% dashboard performance boost</span>
+          <span class="kpi">80% faster renewal turnaround</span>
+          <span class="kpi">40% efficiency improvement</span>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <div class="exp-header">
+          <div class="exp-role">Senior Data Scientist (Acting Senior Manager)</div>
+          <div class="exp-period">Oct 2022 – Jun 2024</div>
+        </div>
+        <div class="exp-company">🏢 Nakheel — Dubai, UAE</div>
+        <ul class="exp-points">
+          <li>Built advanced ML models: Churn Prediction, Next Best Brand recommender, Voice of Customer, Lease Deals Monitoring, Leasing Index, and Revenue Risk Management.</li>
+          <li>Developed AI-driven pricing engines that boosted mall revenues by 11% and generated AED 550K in incremental lease income.</li>
+          <li>Designed real-time analytics dashboards across 10+ business verticals, improving decision-making speed by 40%.</li>
+          <li>Architected self-service BI for 300+ users with certified data sources, improving data accuracy to 95%.</li>
+          <li>Launched a Data & Analytics Academy, training business users on BI tools and data storytelling enterprise-wide.</li>
+          <li>Advised C-suite with board-level intelligence shaping investment strategies for multi-billion-dirham assets.</li>
+        </ul>
+        <div class="exp-kpis">
+          <span class="kpi">AED 550K incremental revenue</span>
+          <span class="kpi">11% mall revenue increase</span>
+          <span class="kpi">95% data accuracy</span>
+          <span class="kpi">🏆 INSPIRE Award</span>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <div class="exp-header">
+          <div class="exp-role">Data Scientist — Customer Analytics & Digital Transformation</div>
+          <div class="exp-period">May 2019 – Oct 2022</div>
+        </div>
+        <div class="exp-company">🏢 Al-Futtaim Group Real Estate — Dubai, UAE</div>
+        <ul class="exp-points">
+          <li>Built centralized BigQuery data warehouse with automated SQL and Alteryx pipelines integrating CRM, campaign, and social data.</li>
+          <li>Developed CLV, churn prediction, and behavioral clustering models delivering 21% revenue uplift and 4.8% retention improvement.</li>
+          <li>Designed and executed A/B and multivariate experiments driving 28% improvement in campaign ROI and 12% higher engagement.</li>
+          <li>Engineered the Blue Rewards Omni-channel Analytics Platform integrating digital, transactional, and loyalty data.</li>
+          <li>Built time-series forecasting and geospatial analytics achieving 95% footfall prediction accuracy.</li>
+          <li>Productionized ML-based pricing optimization model from Automotive Hackathon to enterprise AI initiative.</li>
+        </ul>
+        <div class="exp-kpis">
+          <span class="kpi">21% revenue uplift</span>
+          <span class="kpi">28% campaign ROI improvement</span>
+          <span class="kpi">50% efficiency gains via AI</span>
+          <span class="kpi">🏆 NAJM Q1 2022 Award</span>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <div class="exp-header">
+          <div class="exp-role">Data Scientist — Marketing & Customer Analytics</div>
+          <div class="exp-period">Jul 2017 – Feb 2019</div>
+        </div>
+        <div class="exp-company">🏢 Caterpillar Signs Pvt Ltd — India</div>
+        <ul class="exp-points">
+          <li>Built RFM and cohort-based customer segmentation models, increasing retention by 15% and repeat purchases by 20%.</li>
+          <li>CLV predictive models delivering 21% annual revenue uplift through data-driven marketing decisions.</li>
+          <li>Markov chain attribution modeling to optimize marketing spend efficiency by 15%.</li>
+          <li>Earned 200% quarterly performance bonus for analytics-driven revenue impact.</li>
+        </ul>
+        <div class="exp-kpis">
+          <span class="kpi">21% revenue uplift</span>
+          <span class="kpi">200% performance bonus</span>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <div class="exp-header">
+          <div class="exp-role">Associate Data Scientist — Client Analytics (Consulting)</div>
+          <div class="exp-period">Jul 2015 – Dec 2016</div>
+        </div>
+        <div class="exp-company">🏢 Tatvic Analytics Pvt Ltd — India</div>
+        <ul class="exp-points">
+          <li>Built proprietary "PredictN" model boosting conversions by 35% and client revenue by 25%.</li>
+          <li>Automated large-scale BigQuery/R analytics workflows reducing query time by 40%.</li>
+          <li>Delivered end-to-end analytics consulting for enterprise clients across customer experience, marketing, and ROI optimization.</li>
+        </ul>
+        <div class="exp-kpis">
+          <span class="kpi">35% conversion increase</span>
+          <span class="kpi">40% faster query execution</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-label">Technical Skills</div>
+    <div class="section-title">Full-Spectrum<br>Data Technology Stack</div>
+    <div class="divider-line"></div>
+    <div class="skills-layout">
+      <div class="skill-block">
+        <div class="skill-block-title">Languages & Programming</div>
+        <div class="skill-pills">
+          <span class="sp highlight">Python</span><span class="sp highlight">SQL</span><span class="sp highlight">R</span>
+          <span class="sp">SPSS</span><span class="sp">Alteryx</span><span class="sp">Advanced Excel</span><span class="sp">Bash</span>
+        </div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-block-title">Machine Learning & AI</div>
+        <div class="skill-pills">
+          <span class="sp highlight">Scikit-learn</span><span class="sp highlight">TensorFlow</span><span class="sp highlight">PyTorch</span>
+          <span class="sp">XGBoost</span><span class="sp">NLP</span><span class="sp">Deep Learning</span>
+          <span class="sp">Generative AI</span><span class="sp">Azure ML</span><span class="sp">MLOps</span>
+        </div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-block-title">Data Engineering & Cloud</div>
+        <div class="skill-pills">
+          <span class="sp highlight">Databricks</span><span class="sp highlight">BigQuery</span><span class="sp highlight">Azure Data Factory</span>
+          <span class="sp">Microsoft Fabric</span><span class="sp">Airflow</span><span class="sp">dbt</span>
+          <span class="sp">GCP</span><span class="sp">Snowflake</span><span class="sp">Data Lakes</span>
+        </div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-block-title">BI & Visualization</div>
+        <div class="skill-pills">
+          <span class="sp highlight">Power BI</span><span class="sp highlight">Tableau</span><span class="sp">Looker Studio</span>
+          <span class="sp">DAX</span><span class="sp">Tableau Server</span><span class="sp">Google Data Studio</span>
+        </div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-block-title">Analytics Methods</div>
+        <div class="skill-pills">
+          <span class="sp highlight">Time Series Forecasting</span><span class="sp highlight">A/B Testing</span>
+          <span class="sp">Customer Segmentation</span><span class="sp">CLV Modeling</span>
+          <span class="sp">Geospatial Analytics</span><span class="sp">Attribution Modeling</span><span class="sp">SPC</span>
+        </div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-block-title">Domain Tools & Platforms</div>
+        <div class="skill-pills">
+          <span class="sp">Yardi</span><span class="sp">Salesforce CRM</span><span class="sp">Google Analytics 360</span>
+          <span class="sp">Sprinklr</span><span class="sp">Supermetrics</span><span class="sp">CDP</span><span class="sp">VemCount</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section style="background:var(--bg2);padding:60px 5%;">
+  <div class="section-inner">
+    <div class="section-label">Industries</div>
+    <div class="section-title" style="margin-bottom:32px;">Proven Across<br>Key Sectors</div>
+    <div class="ind-grid">
+      <div class="ind"><div class="ind-icon">🏙️</div><div class="ind-name">Real Estate</div><div class="ind-detail">Dubai Holding, Nakheel, Al-Futtaim</div></div>
+      <div class="ind"><div class="ind-icon">🛍️</div><div class="ind-name">Retail & Malls</div><div class="ind-detail">Tenant analytics, footfall, pricing</div></div>
+      <div class="ind"><div class="ind-icon">📱</div><div class="ind-name">Digital & Marketing</div><div class="ind-detail">Campaign analytics, CRM, attribution</div></div>
+      <div class="ind"><div class="ind-icon">🏦</div><div class="ind-name">Finance & Investment</div><div class="ind-detail">Portfolio performance, risk modeling</div></div>
+      <div class="ind"><div class="ind-icon">🚗</div><div class="ind-name">Automotive</div><div class="ind-detail">Pricing optimization, ML hackathon</div></div>
+      <div class="ind"><div class="ind-icon">📦</div><div class="ind-name">Supply Chain</div><div class="ind-detail">Demand forecasting, inventory</div></div>
+      <div class="ind"><div class="ind-icon">💚</div><div class="ind-name">ESG & Sustainability</div><div class="ind-detail">ESG dashboards, utilities analytics</div></div>
+      <div class="ind"><div class="ind-icon">👥</div><div class="ind-name">HR Analytics</div><div class="ind-detail">People analytics, performance KPIs</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section id="awards">
+  <div class="section-inner">
+    <div class="section-label">Recognition</div>
+    <div class="section-title">Awards &<br>Achievements</div>
+    <div class="divider-line"></div>
+    <div class="awards-grid">
+      <div class="award featured">
+        <div class="award-icon">🏆</div>
+        <div class="award-title">NAJM Q1 2022 Award</div>
+        <div class="award-sub">Al-Futtaim Group — Dubai</div>
+        <div class="award-desc">Organization-wide recognition for outstanding contribution, diligence, and commitment. Placed in the top 5% of performers for delivering high-impact AI and analytics solutions that directly influenced business strategy and operations.</div>
+      </div>
+      <div class="award featured">
+        <div class="award-icon">🌟</div>
+        <div class="award-title">INSPIRE Award</div>
+        <div class="award-sub">Nakheel — Dubai</div>
+        <div class="award-desc">Awarded for successfully leading the enterprise Data Transformation initiative — a major cross-functional program that unified data across 10+ business verticals and enabled data-driven decision-making at scale.</div>
+      </div>
+      <div class="award">
+        <div class="award-icon">🎤</div>
+        <div class="award-title">Best Speaker 2022</div>
+        <div class="award-sub">United Research Global Conference — Dubai</div>
+        <div class="award-desc">Recognized for delivering innovative and impactful research insights on applying advanced statistics to real-world business challenges. Selected as Best Speaker among international presenters.</div>
+      </div>
+      <div class="award">
+        <div class="award-icon">🥈</div>
+        <div class="award-title">2nd Place — Analytics Vidhya Hackathon</div>
+        <div class="award-sub">Competitive ML Challenge</div>
+        <div class="award-desc">Delivered a top-ranked AI model for Loan Prediction, competing against hundreds of data scientists globally. Demonstrates applied machine learning excellence under competitive conditions.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section style="background:var(--bg2);">
+  <div class="section-inner">
+    <div class="section-label">Education</div>
+    <div class="section-title" style="margin-bottom:32px;">Academic<br>Foundation</div>
+    <div class="edu-grid">
+      <div class="edu">
+        <div class="edu-icon">🎓</div>
+        <div class="edu-deg">Ph.D. — Artificial Intelligence & Machine Learning</div>
+        <div class="edu-school">BITS Pilani, Dubai</div>
+        <div class="edu-year">2024 – Present</div>
+        <div class="edu-badge">In Progress</div>
+      </div>
+      <div class="edu">
+        <div class="edu-icon">📐</div>
+        <div class="edu-deg">M.Sc. Statistics — First Class Honors</div>
+        <div class="edu-school">Sardar Patel University, India</div>
+        <div class="edu-year">2013 – 2015</div>
+        <div class="edu-badge">First Class Honors</div>
+      </div>
+      <div class="edu">
+        <div class="edu-icon">📊</div>
+        <div class="edu-deg">B.Sc. Statistics — First Class Honors</div>
+        <div class="edu-school">Gujarat University, India</div>
+        <div class="edu-year">2010 – 2013</div>
+        <div class="edu-badge">First Class Honors</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER / CTA -->
+<footer id="contact">
+  <div class="footer-inner">
+    <div class="section-label" style="margin-bottom:16px;">Get In Touch</div>
+    <div class="footer-title">Have a Data Challenge?<br><em>Let's Solve It Together.</em></div>
+    <p class="footer-sub">Whether it's a quick analysis, a full ML system, a messy pipeline, or an AI transformation — if it involves data, I can handle it. Let's talk.</p>
+    <div class="footer-contact">
+      <div class="fc"><span class="fc-icon">📧</span> kazmeen.chaudhary@gmail.com</div>
+      <div class="fc"><span class="fc-icon">📍</span> Dubai, UAE · Available Worldwide</div>
+    </div>
+    <div>
+      <a href="mailto:kazmeen.chaudhary@gmail.com" class="btn-primary" style="font-size:14px;padding:13px 36px;">Send Me a Message →</a>
+    </div>
+    <div class="footer-bottom">
+      © 2025 Kazmeen Chaudhary · Assistant Manager · Senior Data Scientist & Analytics Expert · Dubai, UAE<br>
+      <span style="color:var(--text3);font-size:11px;">Dubai Holding · Nakheel · Al-Futtaim · BITS Pilani Ph.D. Candidate</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+    }
+  });
+}, {threshold: 0.1});
+
+document.querySelectorAll('.srv, .exp-item, .award, .edu, .ind, .skill-block').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(16px)';
+  el.style.transition = 'opacity .5s ease, transform .5s ease';
+  obs.observe(el);
+});
+</script>
+</body>
+</html>
